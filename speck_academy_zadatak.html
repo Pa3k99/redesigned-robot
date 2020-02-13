@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans&display=swap" rel="stylesheet">
+<style>
+.row 
+{
+	display: flex;
+}
+	
+.column 
+{
+	flex: 50%;
+	padding: 10px;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.paragraph
+{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px
+}
+
+ul li {
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+
+#myUL li:hover {
+  background: #4747BF;
+}
+
+#newUL li:hover {
+  background: #FF6666;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div id="myDIV" class="row">
+  
+  <div class="column">
+		<p1 class = "paragraph"> Alati </p1>
+		<ul id="myUL"  >
+		  <li>čekić</li>
+		  <li>bušilica</li>
+		  <li>guma</li>
+		  <li>mač</li>
+		</ul>
+  </div>
+  <div class="column">
+		<p2 class = "paragraph"> Toolbox </p2>
+		<ul id="newUL">
+		</ul>
+  </div>
+</div>
+
+
+
+
+<script>
+var list = document.querySelector('ul');
+list.addEventListener('click', function() {
+  if (event.target.tagName === 'LI') {
+    var list_item = event.target.firstChild.nodeValue;
+	addItem(list_item);
+  }
+}, false);
+
+
+function addItem( list_item )
+{
+		var ul = document.getElementById("newUL");  
+        var li = document.createElement("li");  
+        li.innerHTML = list_item;    
+        li.onclick = function() {this.parentNode.removeChild(this);}
+   
+        ul.appendChild(li);      
+ }
+</script>
+
+
+
+
+</body>
+</html>
