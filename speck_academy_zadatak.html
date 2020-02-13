@@ -99,12 +99,12 @@ list.addEventListener('click', function() {
 
 function addItem( list_item )
 {
-		var ul = document.getElementById("newUL");  //getting element <ul> to add element to
-        var li = document.createElement("li");  //creating li element to add
-        li.innerHTML = list_item;    //inserting text into newly created <li> element
+		var ul = document.getElementById("newUL"); 
+        var li = document.createElement("li");  
+        li.innerHTML = list_item;  
         li.onclick = function() {this.parentNode.removeChild(this);}
    
-        ul.appendChild(li);       // will add if count of ul children is 0 otherwise add before first item
+        ul.appendChild(li);      
  }
 </script>
 
